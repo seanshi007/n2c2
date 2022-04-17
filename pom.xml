@@ -100,20 +100,6 @@
                                         src="https://raw.githubusercontent.com/filannim/2018_n2c2_evaluation_scripts/master/track1_eval.py"
                                         dest="${project.build.directory}/track1_eval.py"
                                         verbose="false" usetimestamp="true"/>
-                                <!-- Sample file -->
-								<get
-									src="https://n2c2.dbmi.hms.harvard.edu/files/n2c2_sample_file_annotations.zip"
-									dest="${project.build.directory}/n2c2_sample_file_annotations.zip"
-									verbose="false" usetimestamp="true" />
-								<unzip
-									src="${project.build.directory}/n2c2_sample_file_annotations.zip"
-									dest="${project.build.directory}" />
-								<copy
-									file="${project.build.directory}/n2c2_sample_file_annotations/sample.xml"
-									tofile="${basedir}/src/test/resources/gold-standard/sample.xml" />
-								<copy
-									file="${project.build.directory}/n2c2_sample_file_annotations/sample.xml"
-									tofile="${basedir}/src/test/resources/results/sample.xml" />
 							</target>
 						</configuration>
 						<goals>
