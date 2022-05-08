@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Baseline classifier
+ */
 public class MajorityClassifier extends CriterionBasedClassifier {
 
     private Map<Eligibility, Integer> countPerEligibility = new HashMap<>();

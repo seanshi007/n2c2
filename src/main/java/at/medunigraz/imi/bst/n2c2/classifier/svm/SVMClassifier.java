@@ -25,6 +25,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * SVM classifier
+ */
 public class SVMClassifier extends CriterionBasedClassifier {
 
     private static final Logger LOG = LogManager.getLogger();

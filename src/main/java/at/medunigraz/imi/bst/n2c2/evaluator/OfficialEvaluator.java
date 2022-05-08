@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * Evaluator for recall and F1 score
+ */
 public class OfficialEvaluator implements Evaluator {
 
     private static final Logger LOG = LogManager.getLogger();

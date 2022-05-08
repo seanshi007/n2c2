@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Evaluator for accuracy
+ */
 public class BasicEvaluator implements Evaluator {
 
     private static final Logger LOG = LogManager.getLogger();

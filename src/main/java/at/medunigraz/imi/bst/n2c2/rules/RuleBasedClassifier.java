@@ -10,6 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Rule based classifier
+ */
 public class RuleBasedClassifier extends CriterionBasedClassifier {
 
     private static final Map<Criterion, Classifiable> name = new HashMap<>();

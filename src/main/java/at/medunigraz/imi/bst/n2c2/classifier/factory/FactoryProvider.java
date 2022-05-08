@@ -6,6 +6,7 @@ import at.medunigraz.imi.bst.n2c2.classifier.PatientBasedClassifier;
 import at.medunigraz.imi.bst.n2c2.nn.BiLSTMCharacterTrigramClassifier;
 import at.medunigraz.imi.bst.n2c2.nn.LSTMPreTrainedEmbeddingsClassifier;
 import at.medunigraz.imi.bst.n2c2.nn.LSTMSelfTrainedEmbeddingsClassifier;
+import at.medunigraz.imi.bst.n2c2.nn.LSTMSentenceEmbeddingsClassifier;
 import at.medunigraz.imi.bst.n2c2.rules.RuleBasedClassifier;
 
 public abstract class FactoryProvider {
@@ -40,6 +41,10 @@ public abstract class FactoryProvider {
 
     public static PatientBasedClassifierFactory getLSTMSelfTrainedFactory() {
         return new PatientBasedClassifierFactory(LSTMSelfTrainedEmbeddingsClassifier.class);
+    }
+
+    public static ClassifierFactory<PatientBasedClassifier> getLSTMSentenceEmbeddingFactory() {
+        return new PatientBasedClassifierFactory(LSTMSentenceEmbeddingsClassifier.class);
     }
 
     public static CriterionBasedClassifierFactory getFakeClassifierFactory() {

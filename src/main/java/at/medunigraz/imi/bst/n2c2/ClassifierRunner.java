@@ -20,10 +20,16 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * This is the entry point for the whole pipeline
+ */
 public class ClassifierRunner {
 
     private static final Logger LOG = LogManager.getLogger();
 
+    /**
+     * Classifiers listed here will be executed by the pipeline one by one
+     */
     private static final ClassifierFactory[] CLASSIFIERS = new ClassifierFactory[]{
         FactoryProvider.getMajorityFactory(),
         FactoryProvider.getRBCFactory(),
@@ -31,7 +37,8 @@ public class ClassifierRunner {
         FactoryProvider.getSelfTrainedPerceptronFactory(),
         FactoryProvider.getPreTrainedPerceptronFactory(),
         FactoryProvider.getLSTMSelfTrainedFactory(),
-        FactoryProvider.getLSTMPreTrainedFactory()
+        FactoryProvider.getLSTMPreTrainedFactory(),
+//        FactoryProvider.getLSTMSentenceEmbeddingFactory(),
     };
 
     public static void main(String[] args) throws IOException {
@@ -43,7 +50,7 @@ public class ClassifierRunner {
         List<Patient> testPatients = DatasetUtil.loadFromFolder(testFolder);
         Collections.sort(testPatients);
 
-        Evaluator officialEvaluator = new OfficialEvaluator();    // n2c2 official metrics
+        Evaluator officialEvaluator = new OfficialEvaluator();  // n2c2 official metrics
         Evaluator basicEvaluator = new BasicEvaluator();        // accuracy and fp/fn metrics
 
         for (ClassifierFactory factory : CLASSIFIERS) {
